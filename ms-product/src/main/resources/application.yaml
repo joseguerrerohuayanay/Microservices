@@ -1,0 +1,5 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://jose:955582189jose@mongodb.qrznz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+      database: ms-product
