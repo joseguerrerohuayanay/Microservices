@@ -27,15 +27,15 @@ public class PaymentServiceImpl implements PaymentService {
 
     @Override
     public Payment update(Payment payment) {
-        Optional<Payment> optionalProduct = paymentRepository.findById(payment.getId());
-        if (!optionalProduct.isPresent()) throw new RuntimeException("No se encontro el producto");
+        Optional<Payment> optionalPayment = paymentRepository.findById(payment.getId());
+        if (!optionalPayment.isPresent()) throw new RuntimeException("No se encontro el payment");
         return paymentRepository.save(payment);
     }
 
     @Override
     public void delete(String id) {
-        Optional<Payment> optionalProduct = paymentRepository.findById(id);
-        if (!optionalProduct.isPresent()) throw new RuntimeException("No se encontro el producto");
+        Optional<Payment> optionalPayment = paymentRepository.findById(id);
+        if (!optionalPayment.isPresent()) throw new RuntimeException("No se encontro el payment");
         paymentRepository.deleteById(id);
     }
 }
